@@ -35,3 +35,11 @@ body.nav-open .nav{display:flex;position:absolute;top:64px;left:0;right:0;flex-d
 .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#fff;padding:8px;border-radius:6px;z-index:999}
 
 @media(max-width:900px){.nav-toggle{display:inline-block}}
+
+/* Nav link highlight */
+.nav a{padding:6px 8px;border-radius:6px;transition:background-color .18s,color .18s}
+.nav a:hover{background:rgba(0,0,0,0.04)}
+.nav a.active{background:var(--blue-1);color:#fff}
+
+/* Make CTA stand out when active */
+.nav a.cta-like{background:var(--blue-2);color:#fff}

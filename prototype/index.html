@@ -84,6 +84,19 @@
         document.body.classList.toggle('nav-open');
       });
     })();
+    // Scroll spy for active nav link
+    (function(){
+      const links = Array.from(document.querySelectorAll('#site-navigation a'));
+      const sections = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+      function onScroll(){
+        const top = window.scrollY + 120;
+        let activeIndex = -1;
+        sections.forEach((sec,i)=>{ if(sec.offsetTop <= top) activeIndex = i });
+        links.forEach((ln,i)=> ln.classList.toggle('active', i===activeIndex));
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
   </script>
 </body>
 </html>
